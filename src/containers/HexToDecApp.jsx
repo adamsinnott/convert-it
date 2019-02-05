@@ -207,7 +207,7 @@ class HexToDecApp extends React.Component {
                     <p>
                         Controls:
                     </p>
-                    <ul><li>i: highlight text box</li><li>k: cycle through primary selection</li><li>l: cycle through secondary selection</li><li>
+                    <ul><li>i: focus on the text box</li><li>k: cycle through primary selection</li><li>l: cycle through secondary selection</li><li>
                         enter: perform the calculation</li><li>r: reset
                     </li></ul>
                 </div>

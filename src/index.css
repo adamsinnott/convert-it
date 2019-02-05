@@ -1,4 +1,6 @@
 body {
+  background-color: #282c34;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,9 +8,63 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #fde8e9;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  background-color: #282c34;
+}
+
+h1, h2 {
+    color: #ECA72C;
+}
+
+select {
+  height: 1.6em;
+}
+
+#output-text-container {
+  margin: 10px;
+  text-align: center;
+  font-size: 60px;
+}
+
+#controls-text {
+  text-align: left;
+}
+#app-wrapper {
+  width: 600px;
+}
+
+.text-left-align {
+  text-align: left;
+}
+
+#entry {
+  height: 39px;
+  font-size: 39px;
+  width: 37%;
+}
+.input-select {
+  height: 45px;
+  vertical-align: top;
+  font-size: 34px;
+  width: 15%;
+}
+.input-buttons {
+  height: 45px;
+  vertical-align: top;
+  font-size: 34px;
+}
+.swap-button {
+  width: 10%;
+}
+.submit-button {
+  width: 22%
 }

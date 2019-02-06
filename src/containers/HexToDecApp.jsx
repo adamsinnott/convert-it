@@ -129,8 +129,12 @@ class HexToDecApp extends React.Component {
       document.removeEventListener("keydown", this.onKeyboardCommand, false);
     }
 
+    // this is the main convert function which will select the function to 
+    // convert to.
     convert (value, primarySelection, secondarySelection) {
         var convertedValue = "";
+        // TODO determine a neater way of using selectionCriteria
+        // to make it more readable
         if ((secondarySelection === this.state.selectionCriteria[0])) {
             convertedValue = this.convertToHex(value, primarySelection);
         }
@@ -143,6 +147,9 @@ class HexToDecApp extends React.Component {
         this.setState({outputText:convertedValue})
     }
 
+    // This function will convert a value to Hexidecimal
+    // using the appropriate base, determining this with the primarySelection
+    // it then returns the value.
     convertToHex (value, primarySelection) {
         let convertedValue = "";
         if ((primarySelection === this.state.selectionCriteria[0])) {
@@ -157,9 +164,16 @@ class HexToDecApp extends React.Component {
         return convertedValue;
     }
 
+    // This function will convert a value to Decimal
+    // using the appropriate base, determining this with the primarySelection
+    // it then returns the value.
     convertToDec (value, primarySelection) {
         let convertedValue = "";
         if ((primarySelection === this.state.selectionCriteria[0])) {
+            // parseInt is used to convert "from" and toString to convert "to"
+            // parseInt takes a value and converts it to the base passed in
+            // toString can then convert that Int to any base we want for 
+            // display purposes
             convertedValue = parseInt(value, 16).toString(10);
         }
         else if ((primarySelection === this.state.selectionCriteria[1])) {
@@ -171,6 +185,9 @@ class HexToDecApp extends React.Component {
         return convertedValue;
     }
 
+    // This function will convert a value to Binary
+    // using the appropriate base, determining this with the primarySelection
+    // it then returns the value that has been converted.
     convertToBin (value, primarySelection) {
         let convertedValue = "";
         if ((primarySelection === this.state.selectionCriteria[0])) {
@@ -185,16 +202,20 @@ class HexToDecApp extends React.Component {
         return convertedValue;
     }
 
+    // when the code is ready to perform the calculation of values
+    // call this method, convert the values and then place focus
+    // back in the text input box
     onSubmit () {
-        // hex dec bin
         let primarySelection = this.state.primarySelection;
         let secondarySelection = this.state.secondarySelection;
-        var value = this.state.entryText;
+        let value = this.state.entryText;
 
         this.convert(value, primarySelection, secondarySelection)
         this.focusInputText();
     }
 
+    // swap the values in primarySelection and secondarySelection
+    // and then palce focus back in the text input box
     onSwapButton () {
         this.swapState();
         this.focusInputText();
@@ -218,10 +239,13 @@ class HexToDecApp extends React.Component {
                 <SubmitButton onSubmit={this.onSubmit} />
                 <OutputText outputText={this.state.outputText} />
                 <p>
-                Work in progress, issues to be sorted:
+                  Work in progress, issues to be sorted:
                 </p>
                 <ul>
-                <li>Validation of the input based on the selection</li>
+                  <li>Validation of the inputselection</li>
+                  <li>Declarative block comments</li>
+                  <li>Add proper readme file</li>
+                  <li>Declarative block comments</li>
                 </ul>
             </div>
         )

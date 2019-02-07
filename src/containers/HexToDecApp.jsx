@@ -229,7 +229,7 @@ class HexToDecApp extends React.Component {
                         Controls:
                     </p>
                     <ul><li>i: focus on the text box</li><li>k: cycle through primary selection</li><li>l: cycle through secondary selection</li><li>
-                        enter: perform the calculation</li><li>r: reset
+                        enter: perform the calculation</li><li>x: swaps primary and secondary selections</li><li>r: reset
                     </li></ul>
                 </div>
                 <EntryText onInputFocus={this.onInputFocus} onInputBlur={this.onInputBlur} onEntryTextChange={this.onEntryTextChange} entryText={this.state.entryText} entryTextRef={this.entryTextRef}/>
@@ -245,7 +245,6 @@ class HexToDecApp extends React.Component {
                   <li>Validation of the inputselection</li>
                   <li>Declarative block comments</li>
                   <li>Add proper readme file</li>
-                  <li>Declarative block comments</li>
                 </ul>
             </div>
         )
